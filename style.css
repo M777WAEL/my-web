@@ -136,3 +136,246 @@ transform: scale(1.1);
     font-weight: 700;
     
 }
+
+.PC{
+    background-color: hsl(249, 100%, 5%);
+    border: 1px solid white;
+
+}
+
+.PC .content{
+    margin-top: 50px;
+
+}
+
+.PC-card{
+    background-color: #f7f3f3;
+    border: 2px solid #ff0000; 
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+
+
+}
+.PC-card:hover{
+    transform: scale(1.1);
+}
+.PC-card:hover{
+    opacity: 0.9;
+}
+.PC-image img{
+    width: 100%;
+}
+.PC-info{
+    padding: 1em;
+}
+.PC-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.Shop-Now{
+    text-decoration: none;
+    color: red;
+}
+.Shop-Now:hover{
+    color: rgb(241, 130, 130)#f18282;
+}
+
+
+
+.Laptop{
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid white;
+
+}
+
+.Laptop .content{
+    margin-top: 50px;
+
+}
+
+.Laptop-card{
+    background-color: hsl(0, 20%, 96%);
+    border: 2px solid #ff0000; 
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+.Laptop-card:hover{
+    transform: scale(1.1);
+}
+.Laptop-card:hover{
+    opacity: 0.9;
+}
+.Laptop-image img{
+    width: 100%;
+    object-fit: cover; 
+}
+.Laptop-info{
+    padding: 1em;
+    width: 100%; 
+    text-align: center; 
+}
+.Laptop-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.Shop-Now{
+    text-decoration: none;
+    color: red;
+}
+.Shop-Now:hover{
+    color: #001aff;
+}
+.Accessories{
+    background-color: hsl(249, 100%, 5%);
+    border: 1px solid white;
+
+}
+
+.Accessories .content{
+    margin-top: 50px;
+
+}
+
+.Accessories-card{
+    background-color: #f7f3f3;
+    border: 2px solid #ff0000; 
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+
+
+}
+.Accessories-card:hover{
+    transform: scale(1.1);
+}
+.Accessories-card:hover{
+    opacity: 0.9;
+}
+.Accessories-image img{
+    width: 100%;
+}
+.Accessories-info{
+    padding: 1em;
+}
+.Accessories-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.Shop-Now{
+    text-decoration: none;
+    color: red;
+}
+.Shop-Now:hover{
+    color: rgb(241, 130, 130)#f18282;
+}
+
+.Contact .icon{
+    font-size: 3.5em;
+
+}
+.Contact .info h3{
+    color: red;
+}
+.Contact .info p{
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.footer{
+    background-color: hsl(249, 100%, 5%);
+    color: white;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-title{
+    font-size: 1.3em;
+    font-weight: 600;
+
+}
+.footer-title span{
+    color: #ff0000;
+}
+
+@media (max-width: 1023px){
+    header{
+        padding: 12px 20px;
+    }
+    .navigation a{
+        padding-left: 10px;
+
+    }
+
+    .title{
+        font-size: 1.8em;
+    }
+    section{
+        padding: 80px 20px;
+    }
+
+    .main-content h2{
+        font-size: 1em;
+    }
+
+    .main-content h3{
+        font-size: 1.6em;
+    }
+
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width:641px){
+    body{
+        font-size: 12px;
+    }
+
+    .main-content h2{
+        font-size: 0.8em;
+
+    }
+    .main-content h3{
+        font-size: 1.4em;
+        
+    }
+
+}
+
+@media (max-width:300px){
+    body{
+    font-size: 10px;
+    }
+}
+
+
+
+
