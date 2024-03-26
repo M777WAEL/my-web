@@ -138,8 +138,8 @@ transform: scale(1.1);
 }
 
 .PC{
-    background-color: hsl(249, 100%, 5%);
-    border: 1px solid white;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid rgb(255, 0, 0);
 
 }
 
@@ -205,7 +205,7 @@ transform: scale(1.1);
     background-color: hsl(0, 20%, 96%);
     border: 2px solid #ff0000; 
     min-height: 14em;
-    width: 23em;
+    width: 20em;
     overflow: hidden;
     border-radius: 10px;
     margin: 20px;
@@ -321,6 +321,9 @@ transform: scale(1.1);
 }
 .footer-title span{
     color: #ff0000;
+}
+.footer.social-icons{
+    color: #001aff;
 }
 
 @media (max-width: 1023px){
