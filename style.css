@@ -1,3 +1,21 @@
+@keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  body {
+    animation: fadeSlideIn 1s ease-in-out;
+  }
+  
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     font-family: "Poppins", sans-serif;
@@ -265,10 +283,11 @@ transform: scale(1.1);
     background-color: #f7f3f3;
     border: 2px solid #ff0000; 
     min-height: 14em;
-    width: 20em;
+    width: 23em;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 50px;
     margin: 20px;
+    text-align: center;
     transition: 0.7s ease;
 
 
@@ -283,7 +302,7 @@ transform: scale(1.1);
     width: 100%;
 }
 .Accessories-info{
-    padding: 1em;
+    padding: 1.1em;
 }
 .Accessories-title{
     display: flex;
@@ -312,6 +331,169 @@ transform: scale(1.1);
     font-size: 1em;
     margin-bottom: 20px;
 }
+/**/
+
+.contactus-header {
+    color: hsl(0, 100%, 50%);
+    font-size: 3rem;
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header-paragraph {
+    color: #ff0000;
+    font-size: large;
+    font-weight: bold;
+}
+
+.Container-of-all-items {
+
+    width: 80%;
+    background-color: hsl(0, 0%, 79%);
+    border-radius: 15px;
+}
+
+.line {
+    width: 115px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+}
+
+
+label {
+    color: rgb(255, 0, 0);
+    ;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+.labels-and-textFields input {
+    height: 30px;
+    margin-left: 60px;
+    width: 40vh;
+    border-color: rgb(255, 0, 0);
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#Email,
+#Name {
+    margin-left: 70px;
+}
+
+input::placeholder {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    padding: 5px;
+}
+
+textarea {
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    padding: 45px;
+    font-weight: bold;
+    width: 350px;
+    resize: none;
+    height: 200px;
+    border-color: #ff0000;
+    border-width: 2px;
+    border-radius: 20px;
+
+}
+
+textarea::placeholder {
+    font-family: "Lato", sans-serif;
+}
+
+
+.submit-button input {
+    color: #ffffff;
+    background-color: #ff0000;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.7em  2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: 0.7s ease;
+}
+
+.submit-button input:hover {
+    background-color: #f25252;
+transform: scale(1.1);
+}
+
+.icons img {
+    border: 1px solid rgb(244, 234, 234);
+    background-color: white;
+    border-radius: 60px;
+    padding: 2px;
+    margin: 10px;
+}
+
+.icons img:hover {
+    background-color: rgb(0, 145, 255);
+    border-color: rgb(0, 145, 255);
+    transition: 0.2s;
+    cursor: pointer;
+
+}
+
+
+/**/
+/**/
+#tablehhh{
+text-align: center;
+color: rgb(250, 2, 2);
+font-size: large;
+font-weight: bold;
+
+}
+
+.schedule-table-container
+ {
+  padding: 7px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px;
+  text-align: center;
+  border: none; 
+
+}
+    
+
+.schedule-table th {
+  
+  background-color: #dd2505; /* Blue */
+  color: white;
+  border: none;
+
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa; /* Light gray */
+}
+
+.schedule-table tbody tr:hover {
+    background-image: linear-gradient(to right, rgb(240, 16, 16), rgb(254, 255, 255));
+}
+
+/**/
 
 .footer{
     background-color: hsl(249, 100%, 5%);
