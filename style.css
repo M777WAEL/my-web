@@ -1,3 +1,5 @@
+
+/*page Animation*/
 @keyframes fadeSlideIn {
     0% {
       opacity: 0;
@@ -60,6 +62,8 @@ section{
     padding: 100px 200px;
 }
 
+
+/*main*/
 .main {
     width: 100%;
     min-height: 100vh;
@@ -159,9 +163,7 @@ transform: scale(1.1);
 
 
 
-
-
-
+/*pc*/
 .PC{
     background-color: hsl(0, 0%, 100%);
     border: 1px solid rgb(255, 0, 0);
@@ -214,7 +216,7 @@ transform: scale(1.1);
 }
 
 
-
+/*laptop*/
 .Laptop{
     background-color: hsl(0, 0%, 100%);
     border: 1px solid white;
@@ -269,6 +271,9 @@ transform: scale(1.1);
 .Shop-Now:hover{
     color: #001aff;
 }
+
+
+/*Accessories*/
 .Accessories{
     background-color: hwb(0 100% 0%);
     border: 1px solid #ff0000;
@@ -321,19 +326,122 @@ transform: scale(1.1);
     color: rgb(241, 130, 130)#f18282;
 }
 
-.Contact .icon{
-    font-size: 3.5em;
 
-}
-.Contact .info h3{
-    color: red;
-}
-.Contact .info p{
-    font-size: 1em;
-    margin-bottom: 20px;
-}
-/**/
 
+
+/*Team*/
+.team{
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.team h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.team h1 span{
+    color: #ff0000;
+    margin-left: 15px;
+    font-family: mv boli;
+}
+
+.team h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.team .team_box{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 13%;
+}
+
+.team .team_box .profile{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 8px rgb(255, 0, 0);
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover{
+    border-radius: 20px;
+    height: 320px;
+}
+
+.team .team_box .profile img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover img{
+    border-radius: 20px;
+    margin-top: -230px;
+}
+
+.team .team_box .profile .info{
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover .info{
+    top: 60%;
+}
+
+.team .team_box .profile .info .name{
+    color: #ff0000;
+    margin-bottom: 15px;
+}
+
+.team .team_box .profile .info .bio{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    font-weight: bold;
+}
+
+.team .team_box .profile .info .team_icon i{
+    margin: 10px 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #dd2505;
+}
+
+.team .team_box .profile .info .team_icon i:hover{
+    color: hsl(0, 100%, 50%);
+}
+
+
+/*contact*/
 .contactus-header {
     color: hsl(0, 100%, 50%);
     font-size: 3rem;
@@ -430,25 +538,11 @@ textarea::placeholder {
 transform: scale(1.1);
 }
 
-.icons img {
-    border: 1px solid rgb(244, 234, 234);
-    background-color: white;
-    border-radius: 60px;
-    padding: 2px;
-    margin: 10px;
-}
 
-.icons img:hover {
-    background-color: rgb(0, 145, 255);
-    border-color: rgb(0, 145, 255);
-    transition: 0.2s;
-    cursor: pointer;
-
-}
 
 
 /**/
-/**/
+/*table*/
 #tablehhh{
 text-align: center;
 color: rgb(250, 2, 2);
@@ -496,7 +590,7 @@ margin-top: 100px;
 }
 
 /**/
-
+/*Footer*/
 .footer{
     background-color: hsl(249, 100%, 5%);
     color: white;
@@ -568,9 +662,6 @@ margin-top: 100px;
     }
 }
 
-@keyframes identifier {
-    
-}
 
 
 
