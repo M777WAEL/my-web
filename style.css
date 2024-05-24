@@ -61,7 +61,7 @@ header {
 }
 
 section {
-    padding: 100px 200px;
+    padding: 100px 150px;
 }
 
 
@@ -215,7 +215,7 @@ section {
 }
 
 .PC-info {
-    padding: 1em;
+    padding: 0px 1em 1em 1em;
 }
 
 .PC-title {
@@ -295,7 +295,7 @@ section {
 }
 
 .Shop-Now:hover {
-    color: #001aff;
+    color: #ff4949;
 }
 
 
@@ -320,8 +320,19 @@ section {
     border-radius: 10px;
     margin: 20px;
     text-align: center;
-    transition: 0.7s ease;
+    transition: 0.5s ease;
 
+
+}
+
+.sub {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 7px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
 
 }
 
@@ -329,16 +340,13 @@ section {
     transform: scale(1.1);
 }
 
-.Accessories-card:hover {
-    opacity: 0.9;
-}
 
 .Accessories-image img {
     width: 100%;
 }
 
 .Accessories-info {
-    padding: 1.1em;
+    padding: 0px 1.1em 1.1em 1.1em;
 }
 
 .Accessories-title {

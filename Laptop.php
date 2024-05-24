@@ -1,3 +1,46 @@
+<?php
+
+include 'connect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+
+if (!isset($user_id)) {
+    header('location:login.php');
+}
+;
+
+if (isset($_GET['logout'])) {
+    unset($user_id);
+    session_destroy();
+    header('location:login.php');
+}
+;
+
+if (isset($_POST['test'])) {
+    $message[] = 'the cart will be shipped soon!';
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+}
+;
+
+if (isset($_POST['add_to_cart'])) {
+
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+
+    if (mysqli_num_rows($select_cart) > 0) {
+        $message[] = 'product already added to cart!';
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES('$user_id', '$product_name', '$product_price', '$product_image', '$product_quantity')") or die('query failed');
+        $message[] = 'product added to cart!';
+    }
+
+}
+;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,280 +76,175 @@
     <!--lap sec-->
     <section class="Laptop" id="Laptop">
         <h2 class="title">Laptop</h2>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div id="message" style="    position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: var(--black);
+            font-size: 20px;
+            text-transform: capitalize;
+            cursor: pointer;" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+
         <div class="content">
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop4.avif" usemap="#workmap">
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/Laptop4.avif">
+                <input type="hidden" name="product_name" value="MSI GAMING">
+                <input type="hidden" name="product_price" value="899">
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/msi-gf63-thin-11sc-laptop-intel-core-i5-11400h-8gb-ram-m-2-nvme-512gb-nvidia-gtx-1650-4gb-15-6-inch-fhd-ips-144hz/"
-                            target="_blank">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/Laptop4.avif" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>MSI GAMING</span>
-                        <a href="https://elnour-tech.com/ar/product/msi-gf63-thin-11sc-laptop-intel-core-i5-11400h-8gb-ram-m-2-nvme-512gb-nvidia-gtx-1650-4gb-15-6-inch-fhd-ips-144hz/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>899$</h4>
+                    </center>
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>MSI GAMING</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    </strong>
+                        </strong>
 
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop5.jpg" usemap="#workmap">
-
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/acer-nitro-5-an515-58-74a0-intel-core-i7-12700h-nvidia-rtx-3060-6gb-16gb-ram-ddr5-512gb-nvme-15-6-fhd-ips-144hz-win-11/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>ACER NITRO</span>
-                        <a href="https://elnour-tech.com/ar/product/acer-nitro-5-an515-58-74a0-intel-core-i7-12700h-nvidia-rtx-3060-6gb-16gb-ram-ddr5-512gb-nvme-15-6-fhd-ips-144hz-win-11/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/Laptop5.jpg">
+                <input type="hidden" name="product_name" value="ACER NITRO">
+                <input type="hidden" name="product_price" value="999">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/Laptop5.jpg" usemap="#workmap">
 
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop6.jpg" usemap="#workmap">
+                    </div>
+                    <center class="price2">
+                        <h4>999$</h4>
+                    </center>
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/lenovo-legion-slim-5-16irh8-intel-core-i7-13700h-ram-16gb-ddr5-ssd-512gb-nvme-nvidia-rtx-4050-6gb-16-0inch-wqxga-2560x1600-ips-100-srgb-g-sync-165hz-storm-grey/"
-                            target="_blank">
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>ACER NITRO</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>LENOVO LEGION</span>
-                        <a href="https://elnour-tech.com/ar/product/lenovo-legion-slim-5-16irh8-intel-core-i7-13700h-ram-16gb-ddr5-ssd-512gb-nvme-nvidia-rtx-4050-6gb-16-0inch-wqxga-2560x1600-ips-100-srgb-g-sync-165hz-storm-grey/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                        </strong>
 
-                    </strong>
-
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop.jpg" usemap="#workmap">
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/dell-g15-5515-gaming-laptop-ryzen7-5800h-ram-16gb-512gb-ssd-15-6-inch-120hz-va-rtx-3050-ti-4gb-windows-11/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>DELL G15</span>
-                        <a href="https://elnour-tech.com/ar/product/dell-g15-5515-gaming-laptop-ryzen7-5800h-ram-16gb-512gb-ssd-15-6-inch-120hz-va-rtx-3050-ti-4gb-windows-11/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/Laptop6.jpg">
+                <input type="hidden" name="product_name" value="LENOVO LEGION">
+                <input type="hidden" name="product_price" value="699">
 
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop7.jpg" usemap="#workmap">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/Laptop6.jpg" usemap="#workmap">
 
+                    </div>
+                    <center class="price2">
+                        <h4>699$</h4>
+                    </center>
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>LENOVO LEGION</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>HP VICTUS</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                        </strong>
 
-                    </strong>
-
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.pc1.png" usemap="#workmap">
-
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>MacBook Pro</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/Laptop.jpg">
+                <input type="hidden" name="product_name" value="DELL G15">
+                <input type="hidden" name="product_price" value="799">
 
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.lap1.png" usemap="#workmap">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/Laptop.jpg" usemap="#workmap">
+                    </div>
+                    <center class="price2">
+                        <h4>799$</h4>
+                    </center>
 
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>DELL G15</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
+                        </strong>
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>MacBook Air</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.lap2.png" usemap="#workmap">
-
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>ACER NITRO 5</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/Laptop7.jpg">
+                <input type="hidden" name="product_name" value="HP VICTUS">
+                <input type="hidden" name="product_price" value="499">
 
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.lap3.png" usemap="#workmap">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/Laptop7.jpg" usemap="#workmap">
 
+                    </div>
+                    <center class="price2">
+                        <h4>499$</h4>
+                    </center>
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>HP VICTUS</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>ACER PREDATOR</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                        </strong>
 
-                    </strong>
-
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.lap4.png" usemap="#workmap">
-
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>MSI GAMMING G3</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/n.pc1.png">
+                <input type="hidden" name="product_name" value="MacBook Pro">
+                <input type="hidden" name="product_price" value="1199">
 
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/n.lap5.png" usemap="#workmap">
+                <div class="Laptop-card">
+                    <div class="Laptop-image">
+                        <img src="images/n.pc1.png" usemap="#workmap">
 
+                    </div>
+                    <center class="price2">
+                        <h4>1199$</h4>
+                    </center>
+                    <div class="Laptop-info">
+                        <strong class="Laptop-title">
+                            <span>MacBook Pro</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank">
+                        </strong>
 
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>ASUS ROG STRIX</span>
-                        <a href="https://elnour-tech.com/ar/product/hp-victus-15-fa1103ne-intel-core-i5-13420h-ram-8gb-ddr4-512gb-ssd-nvidia-rtx3050-6gb-15-6-fhd-ips-144hz-dos-blue/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
-
-                </div>
-
-            </div>
-            <div class="Laptop-card">
-                <div class="Laptop-image">
-                    <img src="images/Laptop3.jpg" usemap="#workmap">
-
-
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/asus-tuf-gaming-m-fx507zv4-lp007w-core-i7-12700h-ram-16gb-512g-m-2-ssd-nvme-rtx-4060-8gb-15-6inch-fhd-144hz-win-11/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="Laptop-info">
-                    <strong class="Laptop-title">
-                        <span>ASUS TUF F15</span>
-                        <a href="https://elnour-tech.com/ar/product/asus-tuf-gaming-m-fx507zv4-lp007w-core-i7-12700h-ram-16gb-512g-m-2-ssd-nvme-rtx-4060-8gb-15-6inch-fhd-144hz-win-11/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
-
-            </div>
+            </form>
         </div>
     </section>
     <footer class="footer">

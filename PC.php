@@ -1,3 +1,46 @@
+<?php
+
+include 'connect.php';
+session_start();
+$user_id = $_SESSION['user_id'];
+
+if (!isset($user_id)) {
+    header('location:login.php');
+}
+;
+
+if (isset($_GET['logout'])) {
+    unset($user_id);
+    session_destroy();
+    header('location:login.php');
+}
+;
+
+if (isset($_POST['test'])) {
+    $message[] = 'the cart will be shipped soon!';
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+}
+;
+
+if (isset($_POST['add_to_cart'])) {
+
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+
+    if (mysqli_num_rows($select_cart) > 0) {
+        $message[] = 'product already added to cart!';
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES('$user_id', '$product_name', '$product_price', '$product_image', '$product_quantity')") or die('query failed');
+        $message[] = 'product added to cart!';
+    }
+
+}
+;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +66,7 @@
             <a href="Laptop.php">Laptop</a>
             <a href="Accessories.php">Accessories</a>
             <a href="Contact.php">Contact</a>
-            <a href="index.php?logout=<?php echo $email; ?>">Logout</a>
+            <a href="index.php?logout=<?php echo $user_id; ?>">Logout</a>
             <a href="cart.php" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
 
         </nav>
@@ -31,262 +74,179 @@
 
     <section class="PC" id="PC">
         <h2 class="title">PC</h2>
-
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div id="message" style="    position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: var(--black);
+            font-size: 20px;
+            text-transform: capitalize;
+            cursor: pointer;" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
         <div class="content">
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC.webp" usemap="#workmap">
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/PC.webp">
+                <input type="hidden" name="product_name" value="MSI">
+                <input type="hidden" name="product_price" value="499">
 
-                    <map name="workmap">
-                        <area shape="rect" coords="37,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-12400f-asus-dual-radeon-rx-6500-xt-oc/"
-                            target="_blank">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/PC.webp" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>MSI</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-12400f-asus-dual-radeon-rx-6500-xt-oc/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>499$</h4>
+                    </center>
 
-                    </strong>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>MSI</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
+                        </strong>
 
-                </div>
-
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC2.jpg" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-11400f-msi-h510m-a-pro-asus-tuf-gaming-gtx-1660-super-oc-edition-6gb/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>DELL</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-11400f-msi-h510m-a-pro-asus-tuf-gaming-gtx-1660-super-oc-edition-6gb/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/PC2.jpg">
+                <input type="hidden" name="product_name" value="DELL">
+                <input type="hidden" name="product_price" value="599">
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC3.jpeg" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-11400f-msi-h510m-a-pro-asus-tuf-gaming-gtx-1660-super-oc-edition-6gb/"
-                            target="_blank">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/PC2.jpg" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>ASUS</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i5-12400f-asus-tuf-gaming-geforce-rtx-3070-ti-oc-edition-8gb/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>599$</h4>
+                    </center>
 
-                    </strong>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>DELL</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                </div>
+                        </strong>
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC4.jpeg" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/intel-core-i7-13700k-asus-tuf-gaming-rtx-4090-oc-edition-24gb-u-comfort-black-red-gaming-chair-thermaltake-free-gift/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>CORSAIR</span>
-                        <a href="https://elnour-tech.com/ar/product/intel-core-i7-13700k-asus-tuf-gaming-rtx-4090-oc-edition-24gb-u-comfort-black-red-gaming-chair-thermaltake-free-gift/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/PC3.jpeg">
+                <input type="hidden" name="product_name" value="ASUS">
+                <input type="hidden" name="product_price" value="700">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/PC3.jpeg" usemap="#workmap">
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC5.jpg" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
+                    </div>
+                    <center class="price2">
+                        <h4>700$</h4>
+                    </center>
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>COLLER MASTER</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>ASUS</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                    </strong>
+                        </strong>
 
-                </div>
-
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc2.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>Xigmatek</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/PC4.jpeg">
+                <input type="hidden" name="product_name" value="CORSAIR">
+                <input type="hidden" name="product_price" value="349">
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc3.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/PC4.jpeg" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>XPG STARKER</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>349$</h4>
+                    </center>
 
-                    </strong>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>CORSAIR</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                </div>
+                        </strong>
 
-            </div>
-
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc6.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>Galax Revol</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/PC5.jpg">
+                <input type="hidden" name="product_name" value="COLLER MASTER">
+                <input type="hidden" name="product_price" value="469">
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc4.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/PC5.jpg" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>GAMDIAS</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>469$</h4>
+                    </center>
 
-                    </strong>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>COLLER MASTER</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                </div>
+                        </strong>
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc5.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>XIGMATEK G2</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="product_quantity" value="1">
+                <input type="hidden" name="product_image" value="images/n.pc2.png">
+                <input type="hidden" name="product_name" value="Xigmatek">
+                <input type="hidden" name="product_price" value="689">
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/n.pc7.png" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank">
+                <div class="PC-card">
+                    <div class="PC-image">
+                        <img src="images/n.pc2.png" usemap="#workmap">
 
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>XIGMATEK WD</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i3-12100f-afox-gtx-1050ti-4gb-dd2r5/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
+                    </div>
+                    <center class="price2">
+                        <h4>689$</h4>
+                    </center>
 
-                    </strong>
+                    <div class="PC-info">
+                        <strong class="PC-title">
+                            <span>Xigmatek</span>
+                            <input class="sub" type="submit" name="add_to_cart" value="ADD TO CART">
 
-                </div>
+                        </strong>
 
-            </div>
-            <div class="PC-card">
-                <div class="PC-image">
-                    <img src="images/PC6.jpg" usemap="#workmap">
-                    <map name="workmap">
-                        <area shape="rect" coords="34,44,270,350" alt="Computer"
-                            href="https://elnour-tech.com/ar/product/bundel-intel-core-i7-12700kf-rog-strix-z690-a-gaming-wifi-d4/"
-                            target="_blank">
-
-                    </map>
-                </div>
-                <div class="PC-info">
-                    <strong class="PC-title">
-                        <span>GAME NOTE</span>
-                        <a href="https://elnour-tech.com/ar/product/bundel-intel-core-i7-12700kf-rog-strix-z690-a-gaming-wifi-d4/"
-                            target="_blank" class="Shop-Now">Shop Now</a>
-
-                    </strong>
+                    </div>
 
                 </div>
+            </form>
 
-            </div>
+
+
         </div>
     </section>
     <footer class="footer">

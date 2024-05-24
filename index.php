@@ -2,15 +2,15 @@
 
 include 'connect.php';
 session_start();
-$email = $_SESSION['email'];
+$user_id = $_SESSION['user_id'];
 
-if (!isset($email)) {
+if (!isset($user_id)) {
   header('location:login.php');
 }
 ;
 
 if (isset($_GET['logout'])) {
-  unset($email);
+  unset($user_id);
   session_destroy();
   header('location:login.php');
 }
@@ -44,7 +44,7 @@ if (isset($_GET['logout'])) {
       <a href="Laptop.php">Laptop</a>
       <a href="Accessories.php">Accessories</a>
       <a href="Contact.php">Contact</a>
-      <a href="index.php?logout=<?php echo $email; ?>">Logout</a>
+      <a href="index.php?logout=<?php echo $user_id; ?>">Logout</a>
       <a href="cart.php" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
 
     </nav>

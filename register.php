@@ -36,7 +36,7 @@ if (isset($_POST['signIn'])) {
     if ($result->num_rows > 0) {
         session_start();
         $row = $result->fetch_assoc();
-        $_SESSION['email'] = $row['email'];
+        $_SESSION['user_id'] = $row['Id'];
         header("Location: index.php");
         exit();
     } else {
