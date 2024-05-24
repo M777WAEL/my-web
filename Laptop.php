@@ -61,7 +61,7 @@ if (isset($_POST['add_to_cart'])) {
 <body>
     <!--bar-->
     <header>
-        <a href="index.php" class="logo">SEGMA TECH</a>
+    <a href="index.php" class="logo"><img src="images/logo.png" alt="#"></a>
         <nav class="navigation">
             <a href="PC.php">PC</a>
             <a href="Laptop.php">Laptop</a>

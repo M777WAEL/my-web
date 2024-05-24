@@ -37,7 +37,7 @@ if (isset($_GET['logout'])) {
 <body>
 
   <header>
-    <a href="index.php" class="logo">SEGMA TECH</a>
+    <a href="index.php" class="logo"><img src="images/logo.png" alt="#"></a>
     <nav class="navigation">
       <a href="#Sections">Sections</a>
       <a href="PC.php">PC</a>

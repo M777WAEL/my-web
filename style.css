@@ -39,13 +39,12 @@ header {
     padding: 10px 200px;
 }
 
-.logo {
-    text-decoration: none;
-    color: #ff0000;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.8em;
+
+.logo img{
+   width: 13em;
+   height: 2.1em;
 }
+
 
 .navigation a {
     color: rgb(255, 0, 0);
