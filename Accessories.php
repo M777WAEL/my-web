@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Accessories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <a href="index.php" class="logo">SEGMA TECH</a>
+        <nav class="navigation">
+            <a href="PC.php">PC</a>
+            <a href="Laptop.php">Laptop</a>
+            <a href="Accessories.php">Accessories</a>
+            <a href="Contact.php">Contact</a>
+            <a href="index.php?logout=<?php echo $email; ?>">Logout</a>
+            <a href="cart.php" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+
+        </nav>
+    </header>
+    <section class="Accessories" id="Accessories">
+        <h2 class="title">Accessories</h2>
+        <div class="content">
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/MOUSE.jpg" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/marvo-m355-gaming-mouse/" target="_blank">
+
+                    </map>
+                </div>
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>MARVO GAMMING</span>
+                        <a href="https://elnour-tech.com/ar/product/marvo-m355-gaming-mouse/" target="_blank"
+                            class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.m1.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>REDRAGON m711</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.m2.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>MARVO M513</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/KEY.jpg" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>REDRAGON KEYBOARD</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.k1.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>REDRAGON k552</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.k2.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>TechnoZone E 32</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.h1.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>Techno Zone K 70</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/n.h2.png" usemap="#workmap">
+
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank">
+
+                    </map>
+                </div>
+
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>ONIKUMA K17 Pro</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-k568-gaming-mechanical-keyboard-blue-switch-tkl-87-key-rainbow/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="Accessories-card">
+                <div class="Accessories-image">
+                    <img src="images/HEADSET.jpg" usemap="#workmap">
+                    <map name="workmap">
+                        <area shape="rect" coords="34,44,270,350" alt="Computer"
+                            href="https://elnour-tech.com/ar/product/redragon-h230-ajax-rgb-wired-gaming-headset-dynamic-rgb-backlight/"
+                            target="_blank">
+
+                    </map>
+                </div>
+                <div class="Accessories-info">
+                    <strong class="Accessories-title">
+                        <span>REDRAGON HEADSET</span>
+                        <a href="https://elnour-tech.com/ar/product/redragon-h230-ajax-rgb-wired-gaming-headset-dynamic-rgb-backlight/"
+                            target="_blank" class="Shop-Now">Shop Now</a>
+
+                    </strong>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer-title">Done By @ <span>Mohamed Wael & Hosam Saber & Yahya Mohamed</span></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/vWVTdwtfb1zTEkxn/?mibextid=ox5AEW"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@h_saber7?_t=8kuG9cuG5Yr&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/yehia_moh_offical?igsh=YXBqd3RiM29hZGZ1"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Jazzmedo"><i class="fa-brands fa-github"></i></a>
+
+        </div>
+    </footer>
+</body>
+
+</html>

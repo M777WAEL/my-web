@@ -1,11 +1,3 @@
 <?php
-
-$host="localhost";
-$user="root";
-$pass="";
-$db="my-web-login";
-$conn=new mysqli($host,$user,$pass,$db);
-if($conn->connect_error){
-    echo "Failed to connect DB".$conn->connect_error;
-}
+$conn = mysqli_connect('localhost', 'root', '', 'my-web') or die('connection failed');
 ?>

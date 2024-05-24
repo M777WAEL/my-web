@@ -1,33 +1,34 @@
-
 /*page Animation*/
 @keyframes fadeSlideIn {
     0% {
-      opacity: 0;
-      transform: translateY(-50px);
+        opacity: 0;
+        transform: translateY(-50px);
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  body {
+}
+
+body {
     animation: fadeSlideIn 1s ease-in-out;
-  }
-  
+}
 
 
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    font-family: "Poppins", sans-serif;
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+    font-family: "Chakra Petch", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-header{
+header {
     background-color: #f7f3f3;
     width: 100%;
     position: fixed;
@@ -35,10 +36,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px  200px;
+    padding: 10px 200px;
 }
 
-.logo{
+.logo {
     text-decoration: none;
     color: #ff0000;
     text-transform: uppercase;
@@ -46,19 +47,20 @@ header{
     font-size: 1.8em;
 }
 
-.navigation a{
-    color: #ff0000;
+.navigation a {
+    color: rgb(255, 0, 0);
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
     padding-left: 30px;
 
 }
-.navigation a:hover{
-    color: rgb(43, 6, 251);
+
+.navigation a:hover {
+    color: rgb(255, 70, 70);
 }
 
-section{
+section {
     padding: 100px 200px;
 }
 
@@ -75,11 +77,12 @@ section{
     background-attachment: fixed;
 }
 
-.main h2{
+.main h2 {
     color: rgb(255, 2, 2);
     font-size: 1.4em;
     font-weight: 500;
 }
+
 .main h2 span {
     display: inline-block;
     margin-top: 10px;
@@ -87,7 +90,8 @@ section{
     font-size: 4em;
     font-weight: 500;
 }
-.main h3{
+
+.main h3 {
     color: red;
     font-size: 2em;
     font-weight: 700;
@@ -95,29 +99,33 @@ section{
     margin-top: 10px;
     margin-bottom: 30px;
 }
-.main-btn{
+
+.main-btn {
     color: #ffffff;
     background-color: #ff0000;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
     display: inline-block;
-    padding: 0.937em  2.1875em;
+    padding: 0.937em 2.1875em;
     letter-spacing: 1px;
     border-radius: 15px;
     margin-bottom: 40px;
     transition: 0.7s ease;
 }
-.main-btn:hover{
-background-color: #f25252;
-transform: scale(1.1);
+
+.main-btn:hover {
+    background-color: #f25252;
+    transform: scale(1.1);
 }
-.social-icons a{
+
+.social-icons a {
     color: white;
     font-size: 1.7em;
     padding-right: 25px;
 }
-.title{
+
+.title {
     display: flex;
     justify-content: center;
     color: #ff0000;
@@ -125,12 +133,14 @@ transform: scale(1.1);
     font-weight: 800;
     margin-bottom: 30px;
 }
+
 .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .card {
     background-color: #f7f3f3;
     width: 20.25em;
@@ -141,43 +151,47 @@ transform: scale(1.1);
     transition: 0.7s ease;
     margin-bottom: 50px;
 }
-.card:hover{
+
+.card:hover {
     transform: scale(1.1);
 }
-.icon{
+
+.icon {
     color: hsl(0, 100%, 50%);
     font-size: 8em;
     text-align: center;
 
 }
-.info{
+
+.info {
     text-align: center;
 }
-.info h3{
+
+.info h3 {
     color: #ff0000;
     font-size: 2.2em;
     font-weight: 700;
-    
+
 }
 
 
 
 
 /*pc*/
-.PC{
+.PC {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid rgb(255, 0, 0);
 
 }
 
-.PC .content{
+.PC .content {
     margin-top: 50px;
 
 }
 
-.PC-card{
+.PC-card {
     background-color: #f7f3f3;
-    border: 2px solid #ff0000; 
+    border: 2px solid #ff0000;
     min-height: 14em;
     width: 18em;
     overflow: hidden;
@@ -187,19 +201,24 @@ transform: scale(1.1);
 
 
 }
-.PC-card:hover{
+
+.PC-card:hover {
     transform: scale(1.1);
 }
-.PC-card:hover{
+
+.PC-card:hover {
     opacity: 0.9;
 }
-.PC-image img{
+
+.PC-image img {
     width: 100%;
 }
-.PC-info{
+
+.PC-info {
     padding: 1em;
 }
-.PC-title{
+
+.PC-title {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -207,56 +226,62 @@ transform: scale(1.1);
     margin-top: 10px;
 }
 
-.Shop-Now{
+.Shop-Now {
     text-decoration: none;
     color: red;
 }
-.Shop-Now:hover{
+
+.Shop-Now:hover {
     color: rgb(241, 130, 130)#f18282;
 }
 
 
 /*laptop*/
-.Laptop{
+.Laptop {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid white;
 
 }
 
-.Laptop .content{
+.Laptop .content {
     margin-top: 50px;
 
 }
 
-.Laptop-card{
+.Laptop-card {
     background-color: hsl(0, 20%, 96%);
-    border: 2px solid #ff0000; 
+    border: 2px solid #ff0000;
     min-height: 14em;
     width: 19em;
     overflow: hidden;
     border-radius: 10px;
     margin: 20px;
     transition: 0.7s ease;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.Laptop-card:hover{
+
+.Laptop-card:hover {
     transform: scale(1.1);
 }
-.Laptop-card:hover{
+
+.Laptop-card:hover {
     opacity: 0.9;
 }
-.Laptop-image img{
+
+.Laptop-image img {
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
-.Laptop-info{
+
+.Laptop-info {
     padding: 1em;
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
 }
-.Laptop-title{
+
+.Laptop-title {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -264,30 +289,31 @@ transform: scale(1.1);
     margin-top: 10px;
 }
 
-.Shop-Now{
+.Shop-Now {
     text-decoration: none;
     color: red;
 }
-.Shop-Now:hover{
+
+.Shop-Now:hover {
     color: #001aff;
 }
 
 
 /*Accessories*/
-.Accessories{
+.Accessories {
     background-color: hwb(0 100% 0%);
     border: 1px solid #ff0000;
 
 }
 
-.Accessories .content{
+.Accessories .content {
     margin-top: 50px;
 
 }
 
-.Accessories-card{
+.Accessories-card {
     background-color: #f7f3f3;
-    border: 2px solid #ff0000; 
+    border: 2px solid #ff0000;
     min-height: 14em;
     width: 15em;
     overflow: hidden;
@@ -298,19 +324,24 @@ transform: scale(1.1);
 
 
 }
-.Accessories-card:hover{
+
+.Accessories-card:hover {
     transform: scale(1.1);
 }
-.Accessories-card:hover{
+
+.Accessories-card:hover {
     opacity: 0.9;
 }
-.Accessories-image img{
+
+.Accessories-image img {
     width: 100%;
 }
-.Accessories-info{
+
+.Accessories-info {
     padding: 1.1em;
 }
-.Accessories-title{
+
+.Accessories-title {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -318,11 +349,12 @@ transform: scale(1.1);
     margin-top: 10px;
 }
 
-.Shop-Now{
+.Shop-Now {
     text-decoration: none;
     color: red;
 }
-.Shop-Now:hover{
+
+.Shop-Now:hover {
     color: rgb(241, 130, 130)#f18282;
 }
 
@@ -330,14 +362,14 @@ transform: scale(1.1);
 
 
 /*Team*/
-.team{
+.team {
     width: 100%;
     height: 90vh;
     background-size: cover;
     background-position: center;
 }
 
-.team h1{
+.team h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -345,13 +377,13 @@ transform: scale(1.1);
     margin-bottom: 30px;
 }
 
-.team h1 span{
+.team h1 span {
     color: #ff0000;
     margin-left: 15px;
     font-family: mv boli;
 }
 
-.team h1 span::after{
+.team h1 span::after {
     content: '';
     width: 100%;
     height: 2px;
@@ -361,7 +393,7 @@ transform: scale(1.1);
     bottom: 15px;
 }
 
-.team .team_box{
+.team .team_box {
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -371,7 +403,7 @@ transform: scale(1.1);
     top: 13%;
 }
 
-.team .team_box .profile{
+.team .team_box .profile {
     width: 320px;
     height: 320px;
     border-radius: 50%;
@@ -384,59 +416,59 @@ transform: scale(1.1);
     transition: 0.4s;
 }
 
-.team .team_box .profile:hover{
+.team .team_box .profile:hover {
     border-radius: 20px;
     height: 320px;
 }
 
-.team .team_box .profile img{
+.team .team_box .profile img {
     width: 250px;
     height: 250px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     z-index: 2;
     transition: 0.4s;
 }
 
-.team .team_box .profile:hover img{
+.team .team_box .profile:hover img {
     border-radius: 20px;
     margin-top: -230px;
 }
 
-.team .team_box .profile .info{
+.team .team_box .profile .info {
     position: absolute;
     text-align: center;
     top: 25%;
     transition: 0.4s;
 }
 
-.team .team_box .profile:hover .info{
+.team .team_box .profile:hover .info {
     top: 60%;
 }
 
-.team .team_box .profile .info .name{
+.team .team_box .profile .info .name {
     color: #ff0000;
     margin-bottom: 15px;
 }
 
-.team .team_box .profile .info .bio{
+.team .team_box .profile .info .bio {
     width: 70%;
     text-align: center;
     margin: 0 auto 10px auto;
     font-weight: bold;
 }
 
-.team .team_box .profile .info .team_icon i{
+.team .team_box .profile .info .team_icon i {
     margin: 10px 5px 5px 0;
     cursor: pointer;
     transition: 0.3s;
     color: #dd2505;
 }
 
-.team .team_box .profile .info .team_icon i:hover{
+.team .team_box .profile .info .team_icon i:hover {
     color: hsl(0, 100%, 50%);
 }
 
@@ -526,7 +558,7 @@ textarea::placeholder {
     font-size: 1.1em;
     font-weight: 600;
     display: inline-block;
-    padding: 0.7em  2.1875em;
+    padding: 0.7em 2.1875em;
     letter-spacing: 1px;
     border-radius: 15px;
     margin-bottom: 40px;
@@ -535,7 +567,7 @@ textarea::placeholder {
 
 .submit-button input:hover {
     background-color: #f25252;
-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 
@@ -543,46 +575,47 @@ transform: scale(1.1);
 
 /**/
 /*table*/
-#tablehhh{
-text-align: center;
-color: rgb(250, 2, 2);
-font-size: 900;
-font-weight: 900;
-margin-top: 100px;
+#tablehhh {
+    text-align: center;
+    color: rgb(250, 2, 2);
+    font-size: 900;
+    font-weight: 900;
+    margin-top: 100px;
 
 }
 
-.schedule-table-container
- {
-  padding: 30px;
-  width: 100%;
-  margin-top: 20px;
+.schedule-table-container {
+    padding: 30px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .schedule-table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .schedule-table th,
 .schedule-table td {
-  padding: 10px;
-  text-align: center;
-  border: none; 
+    padding: 10px;
+    text-align: center;
+    border: none;
 
 }
-    
+
 
 .schedule-table th {
-  
-  background-color: #dd2505; /* Blue */
-  color: white;
-  border: none;
+
+    background-color: #dd2505;
+    /* Blue */
+    color: white;
+    border: none;
 
 }
 
 .schedule-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa; /* Light gray */
+    background-color: #f8f9fa;
+    /* Light gray */
 }
 
 .schedule-table tbody tr:hover {
@@ -591,73 +624,78 @@ margin-top: 100px;
 
 /**/
 /*Footer*/
-.footer{
+.footer {
     background-color: hsl(249, 100%, 5%);
     color: white;
     padding: 1em;
     display: flex;
     justify-content: space-between;
 }
-.footer-title{
+
+.footer-title {
     font-size: 1.3em;
     font-weight: 600;
 
 }
-.footer-title span{
+
+.footer-title span {
     color: #ff0000;
 }
 
 
 
-@media (max-width: 1023px){
-    header{
+@media (max-width: 1023px) {
+    header {
         padding: 12px 20px;
     }
-    .navigation a{
+
+    .navigation a {
         padding-left: 10px;
 
     }
 
-    .title{
+    .title {
         font-size: 1.8em;
     }
-    section{
+
+    section {
         padding: 80px 20px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 1em;
     }
 
-    .main-content h3{
+    .main-content h3 {
         font-size: 1.6em;
     }
 
-    .content{
+    .content {
         flex-direction: column;
         align-items: center;
     }
 
 }
 
-@media (max-width:641px){
-    body{
+@media (max-width:641px) {
+    body {
         font-size: 12px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 0.8em;
 
     }
-    .main-content h3{
+
+    .main-content h3 {
         font-size: 1.4em;
-        
+
     }
 
 }
 
-@media (max-width:300px){
-    body{
-    font-size: 10px;
+@media (max-width:300px) {
+    body {
+        font-size: 10px;
     }
 }
