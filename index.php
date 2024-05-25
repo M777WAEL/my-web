@@ -108,7 +108,7 @@ if (isset($_GET['logout'])) {
 
 
       <!--clock-->
-  <section class="coutne down timer">
+  <section class="clock">
     <div class="hero">
       <div class="container">
         <div class="clock">
