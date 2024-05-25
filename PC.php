@@ -59,9 +59,9 @@ if (isset($_POST['add_to_cart'])) {
 
 <body>
     <header>
-        <a href="index.php" class="logo">SEGMA TECH</a>
+    <a href="index.php" class="logo"><img src="images/logo.png" alt="#"></a>
         <nav class="navigation">
-            <a href="#Sections">Sections</a>
+            
             <a href="PC.php">PC</a>
             <a href="Laptop.php">Laptop</a>
             <a href="Accessories.php">Accessories</a>
@@ -148,8 +148,8 @@ if (isset($_POST['add_to_cart'])) {
                 <input type="hidden" name="product_price" value="700">
                 <div class="PC-card">
                     <div class="PC-image">
-                        <img src="images/PC3.jpeg" usemap="#workmap">
-
+                    <a href="https://elnour-tech.com/ar/product/onikuma-k17-pro-surround-sound-gaming-headset-3d-bass-pc-red/"><img src="images/PC3.jpeg" usemap="#workmap"></a>   
+                    
                     </div>
                     <center class="price2">
                         <h4>700$</h4>

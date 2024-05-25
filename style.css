@@ -39,13 +39,12 @@ header {
     padding: 10px 200px;
 }
 
-.logo {
-    text-decoration: none;
-    color: #ff0000;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.8em;
+
+.logo img{
+   width: 13em;
+   height: 2.1em;
 }
+
 
 .navigation a {
     color: rgb(255, 0, 0);
@@ -315,7 +314,7 @@ section {
     background-color: #f7f3f3;
     border: 2px solid #ff0000;
     min-height: 14em;
-    width: 15em;
+    width: 18em;
     overflow: hidden;
     border-radius: 10px;
     margin: 20px;
