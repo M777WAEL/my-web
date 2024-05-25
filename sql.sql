@@ -11,14 +11,6 @@ CREATE TABLE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 CREATE TABLE
-    `products` (
-        `id` int (100) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `name` varchar(100) NOT NULL,
-        `price` varchar(100) NOT NULL,
-        `image` varchar(100) NOT NULL
-    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
-
-CREATE TABLE
     `cart` (
         `id` int (100) NOT NULL PRIMARY KEY AUTO_INCREMENT,
         `user_id` int (100) NOT NULL,
