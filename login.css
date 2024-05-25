@@ -1,30 +1,34 @@
 /*page Animation*/
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
+
 @keyframes fadeSlideIn {
     0% {
-      opacity: 0;
-      transform: translateY(-50px);
+        opacity: 0;
+        transform: translateY(-50px);
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  body {
+}
+
+body {
     animation: fadeSlideIn 1s ease-in-out;
     background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-  }
+    font-family: "Chakra Petch", sans-serif;
+}
 
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "poppins" ,sans-serif;
+    font-family: "Chakra Petch", sans-serif;
 }
-body{
+
+body {
 
     width: 100%;
     min-height: 100vh;
@@ -42,31 +46,32 @@ body{
 
 
 
-.container{
+.container {
     background: hsl(0, 0%, 100%);
     width: 450px;
     padding: 1.5rem;
-    margin:50px auto;
-    border-radius:10px;
-    box-shadow: 0 20px  35px  rgba(0,0,1,0.9);
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
 }
-form{
-    margin: 0  2rem;
+
+form {
+    margin: 0 2rem;
 }
 
 .form-control {
     border-radius: 25px;
     padding: 1.25rem;
     font-size: 1rem;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     font-weight: bold;
     margin-bottom: 0.5rem;
-  }
+}
 
 
-.form-title{
+.form-title {
 
 
     text-decoration: none;
@@ -77,9 +82,10 @@ form{
     font-weight: 800;
     font-size: 1.8em;
 }
+
 /* color text */
-input{
-    color:inherit;
+input {
+    color: inherit;
     width: 100%;
     background-color: transparent;
     border: none;
@@ -87,51 +93,61 @@ input{
     padding-left: 1.5rem;
     font-size: 17px;
 }
-.input-group{
+
+.input-group {
     padding: 1% 0;
     position: relative;
 }
+
 /* icons color */
-.input-group i{
+.input-group i {
     position: absolute;
     color: red;
 }
 
-input:focus{
+input:focus {
     background-color: transparent;
     outline: transparent;
     border-bottom: 2px solid hsl(0, 0%, 0%);
 }
-input::placeholder{
+
+input::placeholder {
     color: transparent;
 }
-label{
+
+label {
     color: #000000;
     position: relative;
     left: 1.2em;
     top: -1.3em;
     cursor: auto;
-    transition: 0.3s  ease all;
+    transition: 0.3s ease all;
 }
-input:focus~label,input:not(:placeholder-shown)~label{
-   top: -3em;
-   color: hsl(0, 100%, 50%); 
-   font-size: 15px;
+
+input:focus~label,
+input:not(:placeholder-shown)~label {
+    top: -3em;
+    color: hsl(0, 100%, 50%);
+    font-size: 15px;
 }
-.recover{
+
+.recover {
     text-align: right;
     font-size: 1rem;
     margin-bottom: 1rem;
 }
-.recover a{
+
+.recover a {
     text-decoration: none;
     color: #000000;
 }
-.recover a:hover{
+
+.recover a:hover {
     color: red;
     text-decoration: underline;
 }
-.btn{
+
+.btn {
     color: #ffffff;
     background-color: #ff0000;
     text-decoration: none;
@@ -144,7 +160,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     margin-bottom: 4px;
     transition: 0.7s ease;
 
-/* الشكل 2 */
+    /* الشكل 2 */
 
     /* padding: 8px 0;
     border-radius: 5px;
@@ -156,101 +172,112 @@ input:focus~label,input:not(:placeholder-shown)~label{
     cursor: pointer;
     transition: 0.9s; */
 }
-.btn:hover{
-background-color: #f25252;
-transform: scale(1.1);
+
+.btn:hover {
+    background-color: #f25252;
+    transform: scale(1.1);
 }
-.or{
+
+.or {
     text-align: center;
 }
-.icons{
+
+.icons {
     text-align: center;
 }
-.icons i{
+
+.icons i {
     color: #ff0000;
-    padding:0.8rem 1.5rem;
-    border-radius:10px;
-    font-size:1.5rem;
-    cursor:pointer;
-    border:2px solid #bdbdbd;
-    margin:0 15px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 2px solid #bdbdbd;
+    margin: 0 15px;
     transition: 1s;
 }
-.icons i:hover{
+
+.icons i:hover {
     background: hsl(0, 95%, 85%);
     font-size: 1.6rem;
     border: 2px solid red;
 }
-.links{
+
+.links {
     display: flex;
     justify-content: space-around;
     padding: 0 4rem;
     margin-top: 0.9rem;
     font-weight: bold;
 }
-button{
+
+button {
     color: #ff0000;
     border: none;
     background-color: transparent;
     font-size: 1rem;
     font-weight: bold;
 }
-button:hover{
+
+button:hover {
     text-decoration: underline;
     color: #f25252;
 }
 
 
 
-@media (max-width: 1023px){
-    header{
+@media (max-width: 1023px) {
+    header {
         padding: 12px 20px;
     }
-    .navigation a{
+
+    .navigation a {
         padding-left: 10px;
 
     }
 
-    .title{
+    .title {
         font-size: 1.8em;
     }
-    section{
+
+    section {
         padding: 80px 20px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 1em;
     }
 
-    .main-content h3{
+    .main-content h3 {
         font-size: 1.6em;
     }
 
-    .content{
+    .content {
         flex-direction: column;
         align-items: center;
     }
 
 }
 
-@media (max-width:641px){
-    body{
+@media (max-width:641px) {
+    body {
         font-size: 12px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 0.8em;
 
     }
-    .main-content h3{
+
+    .main-content h3 {
         font-size: 1.4em;
-        
+
     }
 
 }
 
-@media (max-width:300px){
-    body{
-    font-size: 10px;
+@media (max-width:300px) {
+    body {
+        font-size: 10px;
     }
 }
