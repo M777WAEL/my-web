@@ -25,11 +25,13 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="clock.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
+
 
   <title>SEGMA TECH</title>
 </head>
@@ -101,9 +103,27 @@ if (isset($_GET['logout'])) {
           <h3>Laptop</h3>
         </div>
 
-      </div>
 
     </div>
+
+
+      <!--clock-->
+  <section class="coutne down timer">
+    <div class="hero">
+      <div class="container">
+        <div class="clock">
+             <span id="hrs">00</span>
+             <span>:</span>
+             <span id="min">00</span>
+             <span>:</span>
+             <span id="sec">00</span>
+
+    </div>
+      </div>
+        </div>
+
+  </section>
+
 
 
     <!--table-->
@@ -173,6 +193,30 @@ if (isset($_GET['logout'])) {
 
     </div>
   </footer>
+
+  <script>
+    let hrs = document.getElementById("hrs");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    setInterval(() => {
+      let currentTime = new Date();
+ 
+
+     hrs.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+     min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+     sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+      
+    }, 1000)
+
+    let currentTime = new Date();
+
+
+    hrs.innerHTML = currentTime.getHours();
+    min.innerHTML = currentTime.getMinutes();
+    sec.innerHTML = currentTime.getSeconds();
+  </script>  
+
 
 </body>
 

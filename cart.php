@@ -70,7 +70,7 @@ if (isset($_GET['delete_all'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>PC</title>
+    <title>cart</title>
     <link rel="stylesheet" href="cart.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,6 +118,7 @@ if (isset($_GET['delete_all'])) {
                         if (mysqli_num_rows($cart_query) > 0) {
                             while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
                                 ?>
+                                <!-- table row -->
                                 <tr>
                                     <td><img src="<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
                                     <td><?php echo $fetch_cart['name']; ?></td>
