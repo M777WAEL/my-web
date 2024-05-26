@@ -28,6 +28,8 @@ body {
     scroll-behavior: smooth;
 }
 
+  
+
 header {
     background-color: #f7f3f3;
     width: 100%;
@@ -40,6 +42,8 @@ header {
 }
 
 
+
+
 .logo img{
    width: 13em;
    height: 2.1em;
@@ -47,7 +51,7 @@ header {
 
 
 .navigation a {
-    color: rgb(255, 0, 0);
+    color: #168ee9;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
@@ -56,7 +60,7 @@ header {
 }
 
 .navigation a:hover {
-    color: rgb(255, 70, 70);
+    color: #82d5ff;
 }
 
 section {
@@ -77,7 +81,7 @@ section {
 }
 
 .main h2 {
-    color: rgb(255, 2, 2);
+    color: #168ee9;
     font-size: 1.4em;
     font-weight: 500;
 }
@@ -91,7 +95,7 @@ section {
 }
 
 .main h3 {
-    color: red;
+    color: #168ee9;
     font-size: 2em;
     font-weight: 700;
     letter-spacing: 1px;
@@ -101,7 +105,7 @@ section {
 
 .main-btn {
     color: #ffffff;
-    background-color: #ff0000;
+    background-color: #168ee9;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -114,7 +118,7 @@ section {
 }
 
 .main-btn:hover {
-    background-color: #f25252;
+    background-color: #82d5ff;
     transform: scale(1.1);
 }
 
@@ -127,7 +131,7 @@ section {
 .title {
     display: flex;
     justify-content: center;
-    color: #ff0000;
+    color: #168ee9;
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 30px;
@@ -156,7 +160,7 @@ section {
 }
 
 .icon {
-    color: hsl(0, 100%, 50%);
+    color:#168ee9;
     font-size: 8em;
     text-align: center;
 
@@ -167,7 +171,7 @@ section {
 }
 
 .info h3 {
-    color: #ff0000;
+    color:#168ee9;
     font-size: 2.2em;
     font-weight: 700;
 
@@ -188,7 +192,7 @@ section {
 
 .PC-card {
     background-color: #f7f3f3;
-    border: 2px solid #ff0000;
+    border: 2px solid #168ee9;
     min-height: 14em;
     width: 18em;
     overflow: hidden;
@@ -247,7 +251,7 @@ section {
 
 .Laptop-card {
     background-color: hsl(0, 20%, 96%);
-    border: 2px solid #ff0000;
+    border: 2px solid #168ee9;
     min-height: 14em;
     width: 19em;
     overflow: hidden;
@@ -310,7 +314,7 @@ section {
 
 .Accessories-card {
     background-color: #f7f3f3;
-    border: 2px solid #ff0000;
+    border: 2px solid #168ee9;
     min-height: 14em;
     width: 18em;
     overflow: hidden;
@@ -330,6 +334,10 @@ section {
     font-size: 15px;
     font-weight: bold;
     color: #ff0000;
+
+}
+.sub:hover{
+color: #82d5ff;
 
 }
 
@@ -383,9 +391,8 @@ section {
 }
 
 .team h1 span {
-    color: #ff0000;
+    color: #168ee9;
     margin-left: 15px;
-    font-family: mv boli;
 }
 
 .team h1 span::after {
@@ -417,7 +424,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 0 8px rgb(255, 0, 0);
+    box-shadow: 0 0 8px #168ee9;
     transition: 0.4s;
 }
 
@@ -455,7 +462,7 @@ section {
 }
 
 .team .team_box .profile .info .name {
-    color: #ff0000;
+    color: #168ee9;
     margin-bottom: 15px;
 }
 
@@ -470,7 +477,7 @@ section {
     margin: 10px 5px 5px 0;
     cursor: pointer;
     transition: 0.3s;
-    color: #dd2505;
+    color:#168ee9;
 }
 
 .team .team_box .profile .info .team_icon i:hover {
@@ -480,7 +487,7 @@ section {
 
 /*contact*/
 .contactus-header {
-    color: hsl(0, 100%, 50%);
+    color:#168ee9;
     font-size: 3rem;
     margin-top: 25px;
     text-align: center;
@@ -488,7 +495,7 @@ section {
 }
 
 .header-paragraph {
-    color: #ff0000;
+    color: #168ee9;
     font-size: large;
     font-weight: bold;
 }
@@ -504,13 +511,13 @@ section {
     width: 115px;
     height: 5px;
     border-radius: 5px;
-    background-color: rgb(255, 0, 0);
+    background-color: #168ee9;
     text-align: center;
 }
 
 
 label {
-    color: rgb(255, 0, 0);
+    color: #168ee9;
     ;
     font-size: x-large;
     font-weight: bold;
@@ -521,7 +528,7 @@ label {
     height: 30px;
     margin-left: 60px;
     width: 40vh;
-    border-color: rgb(255, 0, 0);
+    border-color:#168ee9;
     border-width: 2px;
     border-radius: 5px;
 }
@@ -545,7 +552,7 @@ textarea {
     width: 350px;
     resize: none;
     height: 200px;
-    border-color: #ff0000;
+    border-color: #168ee9;
     border-width: 2px;
     border-radius: 20px;
 
@@ -558,7 +565,7 @@ textarea::placeholder {
 
 .submit-button input {
     color: #ffffff;
-    background-color: #ff0000;
+    background-color:#168ee9;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -571,7 +578,7 @@ textarea::placeholder {
 }
 
 .submit-button input:hover {
-    background-color: #f25252;
+    background-color: #82d5ff;
     transform: scale(1.1);
 }
 
@@ -582,7 +589,7 @@ textarea::placeholder {
 /*table*/
 #tablehhh {
     text-align: center;
-    color: rgb(250, 2, 2);
+    color: #168ee9;
     font-size: 900;
     font-weight: 900;
     margin-top: 100px;
@@ -611,7 +618,7 @@ textarea::placeholder {
 
 .schedule-table th {
 
-    background-color: #dd2505;
+    background-color: #168ee9;
     /* Blue */
     color: white;
     border: none;
@@ -624,7 +631,7 @@ textarea::placeholder {
 }
 
 .schedule-table tbody tr:hover {
-    background-image: linear-gradient(to right, rgb(240, 16, 16), rgb(254, 255, 255));
+    background-image: linear-gradient(to right, #168ee9, rgb(254, 255, 255));
 }
 
 /**/
@@ -644,7 +651,7 @@ textarea::placeholder {
 }
 
 .footer-title span {
-    color: #ff0000;
+    color: #168ee9;
 }
 
 

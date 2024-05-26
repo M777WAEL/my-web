@@ -26,13 +26,12 @@ if (isset($_GET['logout'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="clock.css">
+  <link rel="stylesheet" href="light.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
-
-
   <title>SEGMA TECH</title>
 </head>
 
@@ -52,6 +51,8 @@ if (isset($_GET['logout'])) {
     </nav>
   </header>
 
+
+
   <!--al main-->
   <section class="main">
     <div>
@@ -70,6 +71,7 @@ if (isset($_GET['logout'])) {
     </div>
 
   </section>
+  
 
   <!--card sec-->
   <section class="cards" id="Sections">
@@ -78,7 +80,7 @@ if (isset($_GET['logout'])) {
       <div class="card">
 
         <div class="icon">
-          <a href="Accessories.php"><i class="fa-solid fa-computer-mouse" style="color: #ff0000;"></i></a>
+          <a href="Accessories.php"><i class="fa-solid fa-computer-mouse" style="color: #168ee9;"></i></a>
         </div>
         <div class="info">
           <h3>Accessories</h3>
@@ -87,7 +89,7 @@ if (isset($_GET['logout'])) {
       </div>
       <div class="card">
         <div class="icon">
-          <a href="PC.php"><i class="fa-solid fa-computer" style="color: #ff0000;"></i></a>
+          <a href="PC.php"><i class="fa-solid fa-desktop" style="color: #168ee9;"></i></a>
         </div>
         <div class="info">
           <h3>PC</h3>
@@ -97,7 +99,7 @@ if (isset($_GET['logout'])) {
       </div>
       <div class="card">
         <div class="icon">
-          <a href="Laptop.php"><i class="fa-solid fa-laptop" style="color: #ff0000;"></i></a><i class=></i>
+          <a href="Laptop.php"><i class="fa-solid fa-laptop" style="color: #168ee9;"></i></a><i class=></i>
         </div>
         <div class="info">
           <h3>Laptop</h3>
@@ -215,7 +217,10 @@ if (isset($_GET['logout'])) {
     hrs.innerHTML = currentTime.getHours();
     min.innerHTML = currentTime.getMinutes();
     sec.innerHTML = currentTime.getSeconds();
-  </script>  
+  </script> 
+  
+
+
 
 
 </body>
