@@ -75,7 +75,7 @@ form {
 
 
     text-decoration: none;
-    color: #ff0000;
+    color: #168ee9;
     text-transform: uppercase;
     text-align: center;
     padding: 2.3rem;
@@ -89,7 +89,7 @@ input {
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #168ee9;
     padding-left: 1.5rem;
     font-size: 17px;
 }
@@ -102,7 +102,7 @@ input {
 /* icons color */
 .input-group i {
     position: absolute;
-    color: red;
+    color: #168ee9;
 }
 
 input:focus {
@@ -127,7 +127,7 @@ label {
 input:focus~label,
 input:not(:placeholder-shown)~label {
     top: -3em;
-    color: hsl(0, 100%, 50%);
+    color: #168ee9;
     font-size: 15px;
 }
 
@@ -143,13 +143,13 @@ input:not(:placeholder-shown)~label {
 }
 
 .recover a:hover {
-    color: red;
+    color: #82d5ff;
     text-decoration: underline;
 }
 
 .btn {
     color: #ffffff;
-    background-color: #ff0000;
+    background-color: #168ee9;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -174,7 +174,7 @@ input:not(:placeholder-shown)~label {
 }
 
 .btn:hover {
-    background-color: #f25252;
+    background-color: #82d5ff;
     transform: scale(1.1);
 }
 
@@ -187,7 +187,7 @@ input:not(:placeholder-shown)~label {
 }
 
 .icons i {
-    color: #ff0000;
+    color: #168ee9;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     font-size: 1.5rem;
@@ -198,7 +198,7 @@ input:not(:placeholder-shown)~label {
 }
 
 .icons i:hover {
-    background: hsl(0, 95%, 85%);
+    background:#82d5ff;
     font-size: 1.6rem;
     border: 2px solid red;
 }
